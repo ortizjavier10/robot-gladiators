@@ -24,7 +24,7 @@ var enemyAttack = 12;
 
 var fight = function (enemyName) {
   //repeat and execute as long as the enemy robot is alive
-  while (enemyHealth > 0) {
+  while (enemyHealth > 0 && playerHealth > 0) {
 
     // skip fight prompt
       var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to continue.");
@@ -53,7 +53,9 @@ var fight = function (enemyName) {
         // check player's health
         if (playerHealth <= 0) {
           window.alert(playerName + " has died!");
-        } else {
+          break;
+        } 
+        else {
           window.alert(playerName + " still has " + playerHealth + " health left.");
         }
         // if player choses to skip
